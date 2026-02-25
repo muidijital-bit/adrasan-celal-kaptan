@@ -1,11 +1,11 @@
 FROM php:8.2-cli
 
-RUN docker-php-ext-install pdo pdo_mysql
+# MySQL driver
+RUN docker-php-ext-install pdo_mysql mysqli
 
 WORKDIR /app
-
 COPY . .
 
 EXPOSE 8000
 
-CMD php -S 0.0.0.0:8000 -t public
+CMD php -S 0.0.0.0:8000
