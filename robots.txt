@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /install.php
+
+Sitemap: http://localhost/adrasan-celal-kaptan/sitemap.xml.php
