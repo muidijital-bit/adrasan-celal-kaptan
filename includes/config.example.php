@@ -5,6 +5,13 @@
 // Bu dosyayi kopyala: cp includes/config.example.php includes/config.php
 // Sonra config.php icindeki bilgileri kendi ortamina gore duzenle.
 
+// Admin sayfalarinda header.php once basildigi icin, sonradan yapilan
+// header('Location: ...') yonlendirmeleri "headers already sent" hatasi
+// veriyordu. Cikisi tamponlayarak bunu engelliyoruz.
+if (!ob_get_level()) {
+    ob_start();
+}
+
 // Veritabani Ayarlari
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'adrasan_celal_kaptan');
